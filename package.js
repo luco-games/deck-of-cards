@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'pakastin:deck-of-cards',
-  version: '0.1.4',
+  name: 'luco:deck-of-cards',
+  version: '0.2.0',
   // Brief, one-line summary of the package.
   summary: 'HTML5 Deck of Cards',
   // URL to the Git repository containing the source code for this package.
@@ -22,15 +22,8 @@ Package.onUse(function(api) {
   api.addAssets('css/faces/back.png', 'client');
 
   // 52 deck cards
-  for( var i = 0; i < 4; i++ ) {
-    for( var j = 1; j <= 13; j++ ) {
-      api.addAssets('css/faces/' + i + '_' + j + '.svg', 'client');
-    }
-  }
-
-  // 3 jokers
-  for( var k = 1; k <= 3; k++ ) {
-    api.addAssets('css/faces/4_' + k + '.svg', 'client');
+  for( var i = 0; i < 2; i++ ) {
+      api.addAssets('css/faces/' + i + '.svg', 'client');
   }
 
   api.export(['Deck'], ['client']);
@@ -39,6 +32,4 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-
-  api.use('pakastin:deck-of-cards');
 });
