@@ -26,7 +26,7 @@ The original project exists thanks to all the people who contribute. [[Contribut
 
 ## License
 
-MIT
+GPLv3
 
 ## Download
 
