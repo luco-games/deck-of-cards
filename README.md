@@ -1,15 +1,15 @@
-# HTML5 Deck of Cards
-[![Financial Contributors on Open Collective](https://opencollective.com/deck-of-cards/all/badge.svg?label=financial+contributors)](https://opencollective.com/deck-of-cards) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pakastin/deck-of-cards?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# HTML5 Deck of Cards (General version)
+This project is more general. Its purpose is to use it for escape or exit games.
 
-## NEW VERSION COMING UP!
+The original project can be found under https://deck.of.cards or https://deck.of.cards/old
 
-The new **multiplayer** Deck of Cards is released at https://deck.of.cards, but will have it's cards library open sourced soon here!
+Thanks to all for this great piece of work!
 
-## Old version
-
+## Current
 Pure vanilla JS (+ CSS3) – no dependencies, by [Juha Lindstedt](https://github.com/pakastin) & [contributors](https://github.com/pakastin/deck-of-cards/graphs/contributors).
 
-https://deck.of.cards/old
+#### Original project
+https://github.com/deck-of-cards/deck-of-cards
 
 [Install from Google Chrome Web Store](https://chrome.google.com/webstore/detail/html5-deck-of-cards/ljafdfknpepklmkhomgaocmehgfdcpno)
 
@@ -21,58 +21,14 @@ Also check out my [RE:DOM](https://redom.js.org) and [HTML5 Node Garden](https:/
 
 ### Code Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+The original project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/deck-of-cards/deck-of-cards/graphs/contributors"><img src="https://opencollective.com/deck-of-cards/contributors.svg?width=890&button=false" /></a>
-
-### Financial Contributors
-
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/deck-of-cards/contribute)]
-
-#### Individuals
-
-<a href="https://opencollective.com/deck-of-cards"><img src="https://opencollective.com/deck-of-cards/individuals.svg?width=890"></a>
-
-#### Organizations
-
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/deck-of-cards/contribute)]
-
-<a href="https://opencollective.com/deck-of-cards/organization/0/website"><img src="https://opencollective.com/deck-of-cards/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/1/website"><img src="https://opencollective.com/deck-of-cards/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/2/website"><img src="https://opencollective.com/deck-of-cards/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/3/website"><img src="https://opencollective.com/deck-of-cards/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/4/website"><img src="https://opencollective.com/deck-of-cards/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/5/website"><img src="https://opencollective.com/deck-of-cards/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/6/website"><img src="https://opencollective.com/deck-of-cards/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/7/website"><img src="https://opencollective.com/deck-of-cards/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/8/website"><img src="https://opencollective.com/deck-of-cards/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/deck-of-cards/organization/9/website"><img src="https://opencollective.com/deck-of-cards/organization/9/avatar.svg"></a>
 
 ## License
 
-LGPL if you use Chris Aguilar's [vector playing cards](http://sourceforge.net/projects/vector-cards/). Otherwise MIT.
+MIT
 
 ## Download
-
-- [Production version (~5 KB uncompressed)](https://deck-of-cards.js.org/dist/deck.min.js)
-- [Development version (~15 KB uncompressed)](https://deck-of-cards.js.org/dist/deck.js)
-
-## Installation from npm
-    npm install deck-of-cards
-
-Then add in your html file
-
-- In `<head>`:
-
-``` html
-<link rel="stylesheet" href="node_modules/deck-of-cards/example/example.css">
-```
-
-- At the end of the `<body>`:
-
-``` html
-<script src="node_modules/deck-of-cards/dist/deck.min.js"></script>
-```
-
 
 ## Usage
 
@@ -216,6 +172,7 @@ Deck without Clubs: http://jsfiddle.net/L25facxj/
 (starts watching for changes..)
 
 ## Latest changes
+- 0.2.0 remove decks and make the project more general
 - 0.1.4 card.animateTo() -method added –> simplier modules! [Simple example of usage](http://jsfiddle.net/x0gjood1/)
 - 0.1.3 JS animations (instead of CSS transitions)
 - 0.1.2 Backside graphics + setRankSuit (+ card.value -> card.rank!)
