@@ -610,6 +610,8 @@ var Deck = (function () {
     self.y = -z;
     self.z = z;
     self.rot = 0;
+    self.scale = 1;
+    self.scaleLimit = false;
 
     // set default side to back
     self.setSide('back');
@@ -617,6 +619,7 @@ var Deck = (function () {
     // add drag/click listeners
     addListener($el, 'mousedown', onMousedown);
     addListener($el, 'touchstart', onMousedown);
+    addListener($el, 'contextmenu', onContextclick);
 
     // load modules
     for (module in modules) {
@@ -713,12 +716,37 @@ var Deck = (function () {
       module.card && module.card(self);
     }
 
+    function onContextclick(e) {
+      // prevent context menu
+      e.preventDefault();
+      return;
+    }
+
     function onMousedown(e) {
       var startPos = {};
       var pos = {};
       var starttime = Date.now();
 
       e.preventDefault();
+
+      if (e.which === 3) {
+        // right mouse click for scale
+        if (self.scale === 1) {
+          self.scaleLimit = false;
+        }
+
+        if (self.scale === 5) {
+          self.scaleLimit = true;
+        }
+
+        if (self.scaleLimit) {
+          self.scale -= 1;
+        } else {
+          self.scale += 1;
+        }
+        $el.style[transform] = translate(self.x + 'px', self.y + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '') + ' scale(' + self.scale + ')';
+        return;
+      }
 
       // get start coordinates and start listening window events
       if (e.type === 'mousedown') {
@@ -739,7 +767,7 @@ var Deck = (function () {
       }
 
       // move card
-      $el.style[transform] = translate(self.x + 'px', self.y + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
+      $el.style[transform] = translate(self.x + 'px', self.y + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '') + ' scale(' + self.scale + ')';
       $el.style.zIndex = maxZ++;
 
       function onMousemove(e) {
@@ -756,11 +784,11 @@ var Deck = (function () {
         }
 
         // move card
-        $el.style[transform] = translate(Math.round(self.x + pos.x - startPos.x) + 'px', Math.round(self.y + pos.y - startPos.y) + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '');
+        $el.style[transform] = translate(Math.round(self.x + pos.x - startPos.x) + 'px', Math.round(self.y + pos.y - startPos.y) + 'px') + (self.rot ? ' rotate(' + self.rot + 'deg)' : '') + ' scale(' + self.scale + ')';
       }
 
       function onMouseup(e) {
-        if (isFlippable && Date.now() - starttime < 200) {
+        if (isFlippable && e.which === 1 && Date.now() - starttime < 200) {
           // flip sides
           self.setSide(self.side === 'front' ? 'back' : 'front');
         }
